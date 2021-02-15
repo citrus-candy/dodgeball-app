@@ -1,0 +1,1252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="16u-mf-m6l">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title View Controller-->
+        <scene sceneID="165-9s-Ddc">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="16u-mf-m6l" customClass="TitleViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xun-uW-DkG">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjK-Xv-DMs">
+                                <rect key="frame" x="336" y="262" width="352" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="試合状況の記録"/>
+                                <connections>
+                                    <action selector="recordButtonTapped:" destination="16u-mf-m6l" eventType="touchUpInside" id="vaG-sc-yzv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ドッジボールの試合管理アプリ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Db0-z9-bdo">
+                                <rect key="frame" x="147" y="79" width="731" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="52"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9j-EU-eYh">
+                                <rect key="frame" x="412" y="439" width="201" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="試合履歴"/>
+                                <connections>
+                                    <action selector="historyButtonTapped:" destination="16u-mf-m6l" eventType="touchUpInside" id="GQD-vM-GA6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="AYQ-Su-6fz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="T1C-hM-cfU"/>
+                    <connections>
+                        <segue destination="kTy-hn-7Py" kind="show" identifier="toMainMenuViewController" id="ibh-QD-6Lj"/>
+                        <segue destination="bde-Ze-4zS" kind="show" identifier="toHistoryTableViewController" id="nwP-T1-EgT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xyd-qn-WFg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1417" y="1538"/>
+        </scene>
+        <!--History Table View Controller-->
+        <scene sceneID="OJV-yG-VBY">
+            <objects>
+                <tableViewController id="bde-Ze-4zS" customClass="HistoryTableViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Km8-uo-lJV">
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="728"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCell" id="MuD-Wd-Iho">
+                                <rect key="frame" x="0.0" y="28" width="712" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MuD-Wd-Iho" id="Qpo-Vs-Ex2">
+                                    <rect key="frame" x="0.0" y="0.0" width="712" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bde-Ze-4zS" id="enL-oy-iud"/>
+                            <outlet property="delegate" destination="bde-Ze-4zS" id="ksd-Mh-Bbg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="efC-PA-PNo"/>
+                    <connections>
+                        <segue destination="JOy-5O-tCO" kind="show" identifier="toResultViewController2" id="3C5-mW-zL8"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vn1-8b-13c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1417" y="2402"/>
+        </scene>
+        <!--Main Menu View Controller-->
+        <scene sceneID="17V-di-EuC">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="kTy-hn-7Py" customClass="MainMenuViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BTe-ch-54J">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ドッジボールの試合記録" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgs-Cv-nIB">
+                                <rect key="frame" x="239" y="56" width="553" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="試合を行う各チームの人数を入力してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXU-nQ-h9d">
+                                <rect key="frame" x="142" y="156" width="741" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="内野の人数を入力してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7D-Zl-zdB">
+                                <rect key="frame" x="265" y="363" width="494" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibz-xx-rnz">
+                                <rect key="frame" x="495" y="264" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiL-VR-jtV">
+                                <rect key="frame" x="493" y="489" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIC-0K-8zI">
+                                <rect key="frame" x="416" y="489" width="31" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oek-4y-f91">
+                                <rect key="frame" x="416" y="264" width="31" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lP-0y-mMv">
+                                <rect key="frame" x="475" y="602" width="81" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="開始"/>
+                                <connections>
+                                    <action selector="startButtonTapped:" destination="kTy-hn-7Py" eventType="touchUpInside" id="S3d-1y-FN9"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FVA-DM-bYv">
+                                <rect key="frame" x="331" y="222" width="77" height="120"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <pickerView tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5uw-qA-AM8">
+                                <rect key="frame" x="331" y="447" width="77" height="120"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ypQ-Lm-qAF">
+                                <rect key="frame" x="580" y="222" width="77" height="120"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGp-1h-9os">
+                                <rect key="frame" x="661" y="489" width="31" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8af-Y3-f9e">
+                                <rect key="frame" x="580" y="447" width="77" height="120"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZI-C9-RPn">
+                                <rect key="frame" x="661" y="264" width="31" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="TgP-0R-ur6"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fzi-AH-9EX"/>
+                    <connections>
+                        <outlet property="enemyTeamInfieldPeoplePickerView" destination="8af-Y3-f9e" id="X1c-js-Ni4"/>
+                        <outlet property="enemyTeamPeoplePickerView" destination="ypQ-Lm-qAF" id="Phg-M7-iJK"/>
+                        <outlet property="myTeamInfieldPeoplePickerView" destination="5uw-qA-AM8" id="eFJ-lz-OMv"/>
+                        <outlet property="myTeamPeoplePickerView" destination="FVA-DM-bYv" id="Ake-iY-KdW"/>
+                        <segue destination="XC1-e4-3Zu" kind="presentation" identifier="toGameSceneViewController" id="9RQ-3c-Cvh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F0x-Xp-uGR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-669.140625" y="1537.5"/>
+        </scene>
+        <!--Game Scene View Controller-->
+        <scene sceneID="Von-gL-7n8">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="XC1-e4-3Zu" customClass="GameSceneViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="asr-H4-eev">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewA-4I-o8U">
+                                <rect key="frame" x="290" y="660" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="60"/>
+                                </state>
+                                <connections>
+                                    <action selector="catched:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="d8e-ba-sqF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvU-aT-ckq">
+                                <rect key="frame" x="290" y="200" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="2.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_2_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="dHQ-oT-3gz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evF-Zo-M5r">
+                                <rect key="frame" x="410" y="200" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="3.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_3_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="cVc-hz-8Ci"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqo-hF-qqm">
+                                <rect key="frame" x="570" y="200" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="1.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_1_fill_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="IOM-t3-ubg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtn-10-sty">
+                                <rect key="frame" x="690" y="200" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="2.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_2_fill_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="ssG-nK-anH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9Y-S0-lra">
+                                <rect key="frame" x="810" y="200" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="3.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_3_fill_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="LKs-Zd-ZcW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mk7-et-LbR">
+                                <rect key="frame" x="394" y="110" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="1.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_1_fill_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="EOI-07-zqQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZn-On-DbA">
+                                <rect key="frame" x="326" y="110" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="2.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_2_fill_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="3lk-Iz-vVM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5m-tI-EKA">
+                                <rect key="frame" x="258" y="110" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="3.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_3_fill_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="Jto-4x-f7H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ5-7i-D0O">
+                                <rect key="frame" x="570" y="300" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="4.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_4_fill_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="RaR-94-p0L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCY-8y-tbf">
+                                <rect key="frame" x="690" y="300" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="5.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_5_fill_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="dFo-si-gxY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXj-m0-VXO">
+                                <rect key="frame" x="810" y="300" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="6.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_6_fill_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="5yN-bZ-alM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcY-BO-tfj">
+                                <rect key="frame" x="190" y="110" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="4.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_4_fill_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="CmH-Fg-QHv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RlN-Vf-Rfq">
+                                <rect key="frame" x="122" y="110" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="5.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_5_fill_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="8Py-CV-jaR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMN-ZN-1HY">
+                                <rect key="frame" x="54" y="110" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="6.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_6_fill_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="5YO-4Y-Cox"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmG-qR-vAV">
+                                <rect key="frame" x="570" y="400" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="7.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_7_fill_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="N3C-es-ube"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86I-av-DwJ">
+                                <rect key="frame" x="690" y="400" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="8.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_8_fill_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="Ea9-W3-0Jk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzm-KI-oFd">
+                                <rect key="frame" x="810" y="400" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="9.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_9_fill_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="beo-iP-rgI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICH-Ae-xjo">
+                                <rect key="frame" x="54" y="178" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="7.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_7_fill_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="VhN-oD-pVP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fi-eC-gjH">
+                                <rect key="frame" x="54" y="246" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="8.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_8_fill_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="acX-un-ydJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AV6-gF-qbO">
+                                <rect key="frame" x="54" y="314" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="9.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_9_fill_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="MLO-Nb-7OB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUc-jN-OjI">
+                                <rect key="frame" x="570" y="500" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="10.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_10_fill_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="jZ8-M5-Ipw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yP-v0-SyA">
+                                <rect key="frame" x="690" y="500" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="11.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_11_fill_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="PUL-71-baP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6y-VP-fkp">
+                                <rect key="frame" x="810" y="500" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="12.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_12_fill_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="Bjk-DP-CN9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8In-g8-LmV">
+                                <rect key="frame" x="54" y="382" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="10.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_10_fill_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="uLh-Ef-3kQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKz-2S-JTq">
+                                <rect key="frame" x="54" y="450" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="11.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_11_fill_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="Bcc-Kl-au8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYD-Va-R6Z">
+                                <rect key="frame" x="54" y="518" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="12.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_12_fill_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="Llg-Ig-dCJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6U-cH-ncm">
+                                <rect key="frame" x="495" y="677" width="61" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="履歴">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="45"/>
+                                </state>
+                                <connections>
+                                    <action selector="sportsCourtTapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="AaP-57-eph"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFN-jQ-WRg">
+                                <rect key="frame" x="690" y="660" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="xmark" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="60"/>
+                                </state>
+                                <connections>
+                                    <action selector="hit:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="iOj-PA-Qcf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJW-7b-yF2">
+                                <rect key="frame" x="170" y="200" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="1.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_1_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="y4o-Qh-XjR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcc-WB-SyH">
+                                <rect key="frame" x="653" y="110" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="2.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_2_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="8gc-GL-1wH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0M-G8-elc">
+                                <rect key="frame" x="721" y="110" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="3.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_3_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="oah-dh-Sl6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdE-00-2mE">
+                                <rect key="frame" x="586" y="110" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="1.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_1_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="iFk-q7-mpo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DH-xl-Kzh">
+                                <rect key="frame" x="290" y="300" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="5.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_5_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="arq-Qv-lH9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRp-Tk-zCv">
+                                <rect key="frame" x="410" y="300" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="6.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_6_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="vph-zH-pQW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gr8-LN-9tg">
+                                <rect key="frame" x="170" y="300" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="4.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_4_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="sfe-zI-OZU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0W9-o8-Qod">
+                                <rect key="frame" x="857" y="110" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="5.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_5_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="tgC-Ke-8xH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cD-QF-OT9">
+                                <rect key="frame" x="925" y="110" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="6.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_6_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="col-1P-UTX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwn-IW-b5C">
+                                <rect key="frame" x="789" y="110" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="4.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_4_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="vqA-Hi-blg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNj-Rq-z4O">
+                                <rect key="frame" x="290" y="400" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="8.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_8_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="JYZ-Hp-Kgi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOM-yT-Puq">
+                                <rect key="frame" x="410" y="400" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="9.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_9_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="Jjg-1C-k7l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9k-tN-iaC">
+                                <rect key="frame" x="170" y="400" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="7.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_7_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="24b-Rd-yVg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmS-Kv-AJD">
+                                <rect key="frame" x="925" y="246" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="8.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_8_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="qHN-rm-gEk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekY-f4-VVa">
+                                <rect key="frame" x="925" y="314" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="9.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_9_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="GwI-3q-yV0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vi5-10-4GM">
+                                <rect key="frame" x="925" y="178" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="7.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_7_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="dbv-rX-6qK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flU-Qh-aAz">
+                                <rect key="frame" x="290" y="500" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="11.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_11_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="Pki-ps-uBs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkr-0o-8Qj">
+                                <rect key="frame" x="410" y="500" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="12.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_12_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="Ork-MZ-dwI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTc-vS-kKg">
+                                <rect key="frame" x="170" y="500" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="10.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_10_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="woQ-fW-JI3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VW-vU-Nky">
+                                <rect key="frame" x="925" y="450" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="11.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_11_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="jk6-TZ-WGn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXC-5u-TIe">
+                                <rect key="frame" x="925" y="518" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="12.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_12_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="CoW-FM-Qi0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rb4-1d-uTx">
+                                <rect key="frame" x="925" y="382" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" image="10.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="circle_10_outfield_tapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="JMX-Ka-gTs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Gj-b2-K21">
+                                <rect key="frame" x="867" y="675" width="94" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="攻守反転"/>
+                                <connections>
+                                    <action selector="statusSwitch:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="Reo-fC-FLV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuK-f7-rcb">
+                                <rect key="frame" x="453" y="32" width="118" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <state key="normal" title="結果表示"/>
+                                <connections>
+                                    <action selector="resultButtonTapped:" destination="XC1-e4-3Zu" eventType="touchUpInside" id="spL-FN-dVL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Yio-LA-wxQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gYv-GS-bM6"/>
+                    <connections>
+                        <outlet property="catchButton" destination="ewA-4I-o8U" id="fWS-Tu-sO1"/>
+                        <outlet property="circle_1" destination="fJW-7b-yF2" id="ETP-KE-0D1"/>
+                        <outlet property="circle_10" destination="iTc-vS-kKg" id="FkV-88-Ea5"/>
+                        <outlet property="circle_10_fill" destination="TUc-jN-OjI" id="iCB-K4-vfZ"/>
+                        <outlet property="circle_10_fill_outfield" destination="8In-g8-LmV" id="OI0-cQ-v20"/>
+                        <outlet property="circle_10_outfield" destination="rb4-1d-uTx" id="wkD-jR-F5g"/>
+                        <outlet property="circle_11" destination="flU-Qh-aAz" id="uQo-tr-wVC"/>
+                        <outlet property="circle_11_fill" destination="5yP-v0-SyA" id="Quf-jg-pZ7"/>
+                        <outlet property="circle_11_fill_outfield" destination="TKz-2S-JTq" id="fFf-v7-w6T"/>
+                        <outlet property="circle_11_outfield" destination="0VW-vU-Nky" id="nAi-W0-f2g"/>
+                        <outlet property="circle_12" destination="Xkr-0o-8Qj" id="4Iq-sx-HJA"/>
+                        <outlet property="circle_12_fill" destination="k6y-VP-fkp" id="frK-bp-4R1"/>
+                        <outlet property="circle_12_fill_outfield" destination="rYD-Va-R6Z" id="nOU-XP-J5e"/>
+                        <outlet property="circle_12_outfield" destination="PXC-5u-TIe" id="K4D-oW-t2B"/>
+                        <outlet property="circle_1_fill" destination="Eqo-hF-qqm" id="4Pm-4g-plm"/>
+                        <outlet property="circle_1_fill_outfield" destination="Mk7-et-LbR" id="rq8-oz-iYx"/>
+                        <outlet property="circle_1_outfield" destination="cdE-00-2mE" id="Vww-Hx-hvM"/>
+                        <outlet property="circle_2" destination="mvU-aT-ckq" id="n1e-KG-FUP"/>
+                        <outlet property="circle_2_fill" destination="gtn-10-sty" id="qML-ZC-fPp"/>
+                        <outlet property="circle_2_fill_outfield" destination="WZn-On-DbA" id="sp5-iV-tS8"/>
+                        <outlet property="circle_2_outfield" destination="Xcc-WB-SyH" id="w81-cO-N0c"/>
+                        <outlet property="circle_3" destination="evF-Zo-M5r" id="vgA-Ud-GYZ"/>
+                        <outlet property="circle_3_fill" destination="Y9Y-S0-lra" id="rTs-dC-cUU"/>
+                        <outlet property="circle_3_fill_outfield" destination="s5m-tI-EKA" id="v3U-wV-ESM"/>
+                        <outlet property="circle_3_outfield" destination="n0M-G8-elc" id="hup-mg-InX"/>
+                        <outlet property="circle_4" destination="Gr8-LN-9tg" id="2nv-4C-iWq"/>
+                        <outlet property="circle_4_fill" destination="ZZ5-7i-D0O" id="9Pz-5Z-X9F"/>
+                        <outlet property="circle_4_fill_outfield" destination="pcY-BO-tfj" id="2JH-ED-Ar9"/>
+                        <outlet property="circle_4_outfield" destination="Vwn-IW-b5C" id="uaD-Lg-2ia"/>
+                        <outlet property="circle_5" destination="0DH-xl-Kzh" id="npq-Wt-yl2"/>
+                        <outlet property="circle_5_fill" destination="CCY-8y-tbf" id="rzy-AT-MdK"/>
+                        <outlet property="circle_5_fill_outfield" destination="RlN-Vf-Rfq" id="71G-R4-4Ay"/>
+                        <outlet property="circle_5_outfield" destination="0W9-o8-Qod" id="FwA-vz-U1j"/>
+                        <outlet property="circle_6" destination="RRp-Tk-zCv" id="hxy-Ub-jXg"/>
+                        <outlet property="circle_6_fill" destination="yXj-m0-VXO" id="kcz-ZP-z4w"/>
+                        <outlet property="circle_6_fill_outfield" destination="uMN-ZN-1HY" id="rxG-cS-zwx"/>
+                        <outlet property="circle_6_outfield" destination="6cD-QF-OT9" id="7hm-Sv-wFp"/>
+                        <outlet property="circle_7" destination="s9k-tN-iaC" id="lqL-cl-eCf"/>
+                        <outlet property="circle_7_fill" destination="SmG-qR-vAV" id="Uci-Ym-43e"/>
+                        <outlet property="circle_7_fill_outfield" destination="ICH-Ae-xjo" id="xtn-hn-b6O"/>
+                        <outlet property="circle_7_outfield" destination="Vi5-10-4GM" id="7xB-lU-bhl"/>
+                        <outlet property="circle_8" destination="GNj-Rq-z4O" id="iRX-1c-C5k"/>
+                        <outlet property="circle_8_fill" destination="86I-av-DwJ" id="wOT-O3-xme"/>
+                        <outlet property="circle_8_fill_outfield" destination="2fi-eC-gjH" id="Zgr-od-uD7"/>
+                        <outlet property="circle_8_outfield" destination="OmS-Kv-AJD" id="0Gx-Id-m4b"/>
+                        <outlet property="circle_9" destination="IOM-yT-Puq" id="I93-cq-YkA"/>
+                        <outlet property="circle_9_fill" destination="bzm-KI-oFd" id="K3M-eK-OhO"/>
+                        <outlet property="circle_9_fill_outfield" destination="AV6-gF-qbO" id="wI1-O3-N8G"/>
+                        <outlet property="circle_9_outfield" destination="ekY-f4-VVa" id="gZS-9A-gUI"/>
+                        <outlet property="hitButton" destination="aFN-jQ-WRg" id="2C6-Hh-8qN"/>
+                        <outlet property="resultButton" destination="nuK-f7-rcb" id="mPf-99-vNm"/>
+                        <outlet property="statusSwitch" destination="8Gj-b2-K21" id="BAL-iv-c1l"/>
+                        <segue destination="Vts-94-2Sh" kind="show" identifier="toTableView" id="1oj-pT-N3G"/>
+                        <segue destination="JOy-5O-tCO" kind="show" identifier="toResultViewController" id="eBI-yI-VQP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mAN-Ck-A7w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96.09375" y="1537.5"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="6bS-5F-Xul">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="JOy-5O-tCO" customClass="ResultViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tVP-jK-wCT">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0Z-Mo-IKy">
+                                <rect key="frame" x="476" y="674" width="69" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="JOy-5O-tCO" eventType="touchUpInside" id="gd9-Qk-tgq"/>
+                                    <segue destination="16u-mf-m6l" kind="show" identifier="toTitleViewController" id="pAW-YC-RFL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12       vs       12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbZ-2C-oh4">
+                                <rect key="frame" x="363" y="93" width="299" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MgL-IE-7Af" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="52" y="184" width="400" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ifl-Nl-29W" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="577" y="184" width="400" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="FEU-YE-DJN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QLM-NY-jcE"/>
+                    <connections>
+                        <outlet property="pieChartsView_A" destination="MgL-IE-7Af" id="doT-4I-7DO"/>
+                        <outlet property="pieChartsView_B" destination="ifl-Nl-29W" id="9aF-tq-htV"/>
+                        <outlet property="resultText" destination="AbZ-2C-oh4" id="FcW-rH-xvU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c9q-wc-TPe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95.5078125" y="2401.5625"/>
+        </scene>
+        <!--Game Table View Controller-->
+        <scene sceneID="lWl-IU-0SV">
+            <objects>
+                <tableViewController id="Vts-94-2Sh" customClass="GameTableViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jv7-ll-ymr">
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="728"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="textCell" id="Nfq-OY-0rQ">
+                                <rect key="frame" x="0.0" y="28" width="712" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nfq-OY-0rQ" id="egJ-Rx-p7v">
+                                    <rect key="frame" x="0.0" y="0.0" width="712" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Vts-94-2Sh" id="m4F-kj-kzL"/>
+                            <outlet property="delegate" destination="Vts-94-2Sh" id="Iqf-hD-jri"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Ebn-du-Owy"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZS-7w-2TD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1017" y="1539"/>
+        </scene>
+        <!--Data Source-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8TF-jk-hoe" customClass="FSCalendar">
+                                <rect key="frame" x="20" y="50" width="984" height="402"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleTextSize">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="subtitleTextSize">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="weekdayTextSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerTitleTextSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="headerDateFormat" value="yyyy年 MM月"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Gwy-K1-wOd"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="OVA-Fi-tIX"/>
+                                </connections>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPb-B3-gw1">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                                <items>
+                                    <navigationItem title="なびげえしょんばあ" id="xEP-3r-mf4">
+                                        <barButtonItem key="leftBarButtonItem" title="めにゅう" id="h49-f3-yyk">
+                                            <connections>
+                                                <action selector="menuButtonTaped:" destination="phS-DB-wuw" id="LM7-Qu-qKY"/>
+                                                <segue destination="D9W-ml-Q99" kind="presentation" id="cfl-E4-Gu9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Y6q-5v-bNJ">
+                                            <connections>
+                                                <action selector="addButtonTapped:" destination="BYZ-38-t0r" id="keV-8a-T4a"/>
+                                                <segue destination="45k-3L-fRr" kind="show" identifier="toAdd" id="Flh-Tg-rlY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QFX-fr-iud">
+                                <rect key="frame" x="20" y="489" width="984" height="279"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="279" id="vjQ-1c-f8L"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="calendarCell" textLabel="Ne0-HQ-2Ck" style="IBUITableViewCellStyleDefault" id="xwf-Mz-9dq">
+                                        <rect key="frame" x="0.0" y="28" width="984" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xwf-Mz-9dq" id="Izt-Zp-178">
+                                            <rect key="frame" x="0.0" y="0.0" width="984" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ne0-HQ-2Ck">
+                                                    <rect key="frame" x="15" y="0.0" width="954" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Diary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgg-qP-bIb">
+                                <rect key="frame" x="20" y="554" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="EPb-B3-gw1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7rP-ZP-17F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QFX-fr-iud" secondAttribute="trailing" constant="20" id="Cs3-wK-PPj"/>
+                            <constraint firstItem="QFX-fr-iud" firstAttribute="top" secondItem="8TF-jk-hoe" secondAttribute="bottom" constant="37" id="EdN-H6-twi"/>
+                            <constraint firstItem="QFX-fr-iud" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="FkV-IJ-PtF"/>
+                            <constraint firstItem="tgg-qP-bIb" firstAttribute="top" secondItem="8TF-jk-hoe" secondAttribute="bottom" constant="8" id="IiS-sg-FPD"/>
+                            <constraint firstItem="8TF-jk-hoe" firstAttribute="top" secondItem="EPb-B3-gw1" secondAttribute="bottom" id="MF5-Zh-sAZ"/>
+                            <constraint firstItem="8TF-jk-hoe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cvd-Ep-YTK"/>
+                            <constraint firstItem="EPb-B3-gw1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eDw-Pg-g92"/>
+                            <constraint firstItem="QFX-fr-iud" firstAttribute="top" secondItem="tgg-qP-bIb" secondAttribute="bottom" constant="8" id="fQV-xd-cWL"/>
+                            <constraint firstItem="EPb-B3-gw1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iyF-cf-Iz5"/>
+                            <constraint firstItem="tgg-qP-bIb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wrG-hh-YM0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8TF-jk-hoe" secondAttribute="trailing" constant="20" id="yHW-Ii-Ho4"/>
+                            <constraint firstItem="QFX-fr-iud" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zxg-uv-XqR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="headerHeight">
+                                <real key="value" value="-1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="titleTextSize">
+                                <real key="value" value="24"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="weekdayTextSize">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="subtitleTextSize">
+                                <real key="value" value="22"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="headerTitleTextSize">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <connections>
+                        <outlet property="calendar" destination="8TF-jk-hoe" id="c3m-la-Lbx"/>
+                        <outlet property="calendarTabelView" destination="QFX-fr-iud" id="yyB-sG-fQK"/>
+                        <outlet property="diaryTextLabel" destination="tgg-qP-bIb" id="ym7-Fv-8Y8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="phS-DB-wuw" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
+        </scene>
+        <!--Add Game View Controller-->
+        <scene sceneID="zng-Mv-kfa">
+            <objects>
+                <viewController id="45k-3L-fRr" customClass="AddGameViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IsC-hO-gzV">
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="728"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8B-RP-tTs">
+                                <rect key="frame" x="164" y="617" width="86" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="閉じる"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="45k-3L-fRr" eventType="touchUpInside" id="6oK-0G-6B4"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hiC-4r-GyZ">
+                                <rect key="frame" x="20" y="184" width="150" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OtA-W4-FQF">
+                                <rect key="frame" x="244" y="184" width="150" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKU-cs-LDM">
+                                <rect key="frame" x="195" y="189.5" width="24" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="チーム名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xG8-dN-2Gm">
+                                <rect key="frame" x="166" y="133" width="82" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="試合結果" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaK-e4-dig">
+                                <rect key="frame" x="166" y="288" width="82" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WfT-kq-aau">
+                                <rect key="frame" x="68" y="344" width="54" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VDY-oW-Kia">
+                                <rect key="frame" x="292" y="344" width="54" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ic-fu-4Nr">
+                                <rect key="frame" x="197" y="350" width="20" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axo-U6-80b">
+                                <rect key="frame" x="179" y="535" width="57" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="決定"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="45k-3L-fRr" eventType="touchUpInside" id="jmk-u2-NCA"/>
+                                    <action selector="saveButtonTapped:" destination="45k-3L-fRr" eventType="touchUpInside" id="Xnf-T5-l49"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="日付" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GY5-Wd-qPq">
+                                <rect key="frame" x="144" y="64" width="127" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="RS4-rp-cTq"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sdr-lm-DgE"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="GY5-Wd-qPq" id="aB2-W5-gSb"/>
+                        <outlet property="teamALabel" destination="hiC-4r-GyZ" id="ZOy-zu-scA"/>
+                        <outlet property="teamAResult" destination="WfT-kq-aau" id="0LY-N6-gFC"/>
+                        <outlet property="teamBLabel" destination="OtA-W4-FQF" id="9m4-VQ-gS1"/>
+                        <outlet property="teamBResult" destination="VDY-oW-Kia" id="K5o-FQ-2dR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dRU-lO-94S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="963.76811594202911" y="840.40178571428567"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="Cf2-i7-uck">
+            <objects>
+                <tableViewController id="fdk-P0-lXS" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RaF-6t-NhU">
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="728"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hau-3P-ZOP">
+                                <rect key="frame" x="0.0" y="28" width="712" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hau-3P-ZOP" id="z3O-Yb-8rz">
+                                    <rect key="frame" x="0.0" y="0.0" width="712" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fdk-P0-lXS" id="vlQ-nO-P2h"/>
+                            <outlet property="delegate" destination="fdk-P0-lXS" id="QRk-yn-Pl3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="iG1-Ay-7vF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gh4-HF-qnr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1842" y="113"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="VNv-IR-TM4">
+            <objects>
+                <navigationController hidesBarsOnSwipe="YES" id="D9W-ml-Q99" customClass="SideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kU9-jA-9c4">
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="fdk-P0-lXS" kind="relationship" relationship="rootViewController" id="jcJ-9u-OJk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="emm-h2-C8Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="965" y="113"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1.circle" catalog="system" width="64" height="60"/>
+        <image name="1.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="10.circle" catalog="system" width="64" height="60"/>
+        <image name="10.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="11.circle" catalog="system" width="64" height="60"/>
+        <image name="11.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="12.circle" catalog="system" width="64" height="60"/>
+        <image name="12.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="2.circle" catalog="system" width="64" height="60"/>
+        <image name="2.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="3.circle" catalog="system" width="64" height="60"/>
+        <image name="3.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="4.circle" catalog="system" width="64" height="60"/>
+        <image name="4.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="5.circle" catalog="system" width="64" height="60"/>
+        <image name="5.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="6.circle" catalog="system" width="64" height="60"/>
+        <image name="6.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="7.circle" catalog="system" width="64" height="60"/>
+        <image name="7.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="8.circle" catalog="system" width="64" height="60"/>
+        <image name="8.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="9.circle" catalog="system" width="64" height="60"/>
+        <image name="9.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="circle" catalog="system" width="64" height="60"/>
+        <image name="xmark" catalog="system" width="64" height="56"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="eBI-yI-VQP"/>
+    </inferredMetricsTieBreakers>
+</document>

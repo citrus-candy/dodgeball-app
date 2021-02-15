@@ -1,0 +1,56 @@
+PODS:
+  - CalculateCalendarLogic (0.3.0)
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
+  - FSCalendar (2.8.0)
+  - Realm (3.20.0):
+    - Realm/Headers (= 3.20.0)
+  - Realm/Headers (3.20.0)
+  - RealmSwift (3.20.0):
+    - Realm (= 3.20.0)
+  - SideMenu (6.4.4)
+
+DEPENDENCIES:
+  - CalculateCalendarLogic (from `https://github.com/fumiyasac/handMadeCalendarAdvance`)
+  - Charts
+  - FSCalendar (from `https://github.com/WenchaoD/FSCalendar`)
+  - RealmSwift
+  - SideMenu (from `https://github.com/jonkykong/SideMenu`)
+
+SPEC REPOS:
+  trunk:
+    - Charts
+    - Realm
+    - RealmSwift
+
+EXTERNAL SOURCES:
+  CalculateCalendarLogic:
+    :git: https://github.com/fumiyasac/handMadeCalendarAdvance
+  FSCalendar:
+    :git: https://github.com/WenchaoD/FSCalendar
+  SideMenu:
+    :git: https://github.com/jonkykong/SideMenu
+
+CHECKOUT OPTIONS:
+  CalculateCalendarLogic:
+    :commit: 2ed6ade997d57f7e4d6d7214a7868e4e5f031e80
+    :git: https://github.com/fumiyasac/handMadeCalendarAdvance
+  FSCalendar:
+    :commit: 3fdc2a45317b947a113a1347ef1c58af51f4a1e2
+    :git: https://github.com/WenchaoD/FSCalendar
+  SideMenu:
+    :commit: 082813937e956a00e863bee8db38db651581e953
+    :git: https://github.com/jonkykong/SideMenu
+
+SPEC CHECKSUMS:
+  CalculateCalendarLogic: cd5b2c706a8628bb924c5ee9d05c4f61bdbaf390
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
+  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
+  Realm: 8b2ca5bc6479a91f379b6b42b5922e396cd5ba5a
+  RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
+  SideMenu: e49a7d61d1f50e9bdaa866bbb9fc7d903c6400ed
+
+PODFILE CHECKSUM: 9b6ec12a9b1b273f0753cc6800fa7632813c0894
+
+COCOAPODS: 1.8.3
